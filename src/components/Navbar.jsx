@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { useOnClickOutside } from '../useOnClickOutside';
+import useOnClickOutside from '../useOnClickOutside';
 
 const Navbar = () => {
   const [dropdown, setDropdown] = useState(false);
@@ -12,8 +12,9 @@ const Navbar = () => {
         <li>Home</li>
         <li>About</li>
         <li ref={ref}>
-          <button onClick={() => setDropdown((pre) => !pre)}>
-            Services <span>&#8595;</span>
+          <button type="button" onClick={() => setDropdown((pre) => !pre)}>
+            Services
+            <span>&#8595;</span>
           </button>
           {dropdown && (
             <ul>
